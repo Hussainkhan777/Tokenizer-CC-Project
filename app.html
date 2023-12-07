@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DML Tokenizer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to DML Tokenizer</h1>
+      <p>
+        Enter your Data Manipulation Language (DML) code below. Click 'Tokenize'
+        to process and analyze your query.
+      </p>
+      <input type="text" id="codeInput" placeholder="Enter DML code here" />
+      <button onclick="tokenizeCode()">Tokenize</button>
+
+      <div class="output-box">
+        <h2>Tokenized Output:</h2>
+        <div class="output-sections">
+          <h3 class="section-heading">Tokens</h3>
+          <div class="output-section output-section1">
+            <pre id="outputSection1"></pre>
+          </div>
+
+          <h3 class="section-heading">Hash Table</h3>
+          <div class="output-section output-section2">
+            <pre id="outputSection2"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

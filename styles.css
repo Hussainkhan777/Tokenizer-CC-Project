@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center content */
+.container {
+  width: 80%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+/* Input field styles */
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #5396dd;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #5396dd;
+}
+
+/* Output box styles */
+.output-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 30px; /* Adjusted margin */
+  background-color: #f9f9f9; /* Background color for output box */
+}
+
+/* Output sections styles */
+.output-sections {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px; /* Adjusted margin */
+}
+
+/* Individual output section style */
+.output-section {
+  border: 1px solid #ccc;
+  padding: 0px 10px;
+  /* margin-bottom: 10px; Spacing between sections */
+  width: calc(100% - 22px); /* Adjust as needed */
+  background-color: #fff; /* Background color for output sections */
+  overflow-y: auto; /* Enable vertical scrollbar if needed */
+  max-height: 100px; /* Set a maximum height */
+  word-wrap: break-word; /* Allow long words to break and wrap */
+  white-space: pre-wrap; /* Preserve formatting and wrap lines */
+}
+
+/* Heading in output sections */
+.output-section h3 {
+  margin-top: 0;
+}
+
+/* Custom names for output sections */
+.output-section1 h3::before {
+  content: "Tokens"; /* Name for the first section */
+}
+
+.output-section2 h3::before {
+  content: "Hash Table"; /* Name for the second section */
+}
+
+/* Heading styles */
+.section-heading {
+  margin-bottom: 5px;
+  background-color: #5396dd; /* Background color for headings */
+  color: white; /* Text color for headings */
+  padding: 5px; /* Padding for headings */
+}

@@ -88,12 +88,13 @@ button:hover {
 .output-section2 table {
   border-collapse: collapse;
   width: 100%;
+  margin-top: -18px;
 }
 
 .output-section2 th,
 .output-section2 td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 6px;
   text-align: left;
 }
 
@@ -111,4 +112,12 @@ button:hover {
 
 .output-section2 th {
   background-color: #f2f2f2;
+}
+/* Add styles to add space above key and value bar in the hash table */
+.output-section2 td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center; /* Horizontal centering */
+  vertical-align: middle; /* Vertical centering */
+  margin-top: 0px; /* 4px top margin */
 }

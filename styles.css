@@ -84,3 +84,31 @@ button:hover {
   color: white; /* Text color for headings */
   padding: 5px; /* Padding for headings */
 }
+/* Add border styling for the table cells */
+.output-section2 table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.output-section2 th,
+.output-section2 td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.output-section2 th {
+  background-color: #f2f2f2;
+}
+/* Add styles to center content horizontally and vertically in table cells */
+.output-section2 th,
+.output-section2 td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center; /* Horizontal centering */
+  vertical-align: middle; /* Vertical centering */
+}
+
+.output-section2 th {
+  background-color: #f2f2f2;
+}

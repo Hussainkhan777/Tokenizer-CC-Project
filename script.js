@@ -22,6 +22,8 @@ function displayTokenizedOutput(tokenArray) {
   let dmlCountMap = new Map();
   let dmlCount = 1;
 
+  let tokensOutput = "";
+
   for (let token of tokenArray) {
     let tokenMatcher = dmlPattern.exec(token);
     if (tokenMatcher !== null) {
@@ -29,25 +31,33 @@ function displayTokenizedOutput(tokenArray) {
       if (!dmlCountMap.has(dmlToken)) {
         dmlCountMap.set(dmlToken, dmlCount++);
       }
-      symbolTable.set(token, "<DML," + dmlCountMap.get(dmlToken) + ">");
-    }
-  }
-
-  let tokensOutput = "";
-  let hashTableOutput = "";
-
-  for (let token of tokenArray) {
-    if (symbolTable.has(token)) {
+      let dmlKey = "<DML," + dmlCountMap.get(dmlToken) + ">";
+      symbolTable.set(dmlToken, dmlKey);
+      tokensOutput += symbolTable.get(dmlToken) + " ";
+    } else if (symbolTable.has(token)) {
       tokensOutput += symbolTable.get(token) + " ";
     } else {
       tokensOutput += "<" + token + "> ";
     }
   }
 
-  for (let [key, value] of symbolTable) {
-    hashTableOutput += "Key: " + key + ", Value: " + value + "\n";
-  }
+  let outputSection1 = document.getElementById("outputSection1");
+  outputSection1.textContent = tokensOutput;
 
-  document.getElementById("outputSection1").textContent = tokensOutput;
-  document.getElementById("outputSection2").textContent = hashTableOutput;
+  let hashTableBody = document.getElementById("hashTableBody");
+  hashTableBody.innerHTML = ""; // Clear previous content
+
+  for (let [key, value] of symbolTable) {
+    let row = document.createElement("tr");
+    let keyCell = document.createElement("td");
+    let valueCell = document.createElement("td");
+
+    keyCell.textContent = key;
+    valueCell.textContent = value;
+
+    row.appendChild(keyCell);
+    row.appendChild(valueCell);
+
+    hashTableBody.appendChild(row);
+  }
 }
